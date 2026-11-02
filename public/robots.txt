@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bhagwati-hospital.vercel.app/sitemap.xml
