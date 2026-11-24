@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bhagwati Hospital website (version 3)
 
-## Getting Started
+One-page website for Bhagwati Hospital, Chaw Mandi, Roorkee, built with Next.js 16 and
+React 19. The design follows the taste skill (MIT licence, see
+`public/assets/LICENSE-taste-skill.txt`): its stylesheet, motion and moment scripts live in
+`public/assets` and are loaded as plain files.
 
-First, run the development server:
+## Run it on your computer
 
-```bash
+Needs Node.js 20.9 or newer.
+
+```
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where things are
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| File | What it holds |
+|---|---|
+| `src/app/page.tsx` | All page sections: treatments, doctors, facilities, visit and questions |
+| `src/app/layout.tsx` | Menu, footer, phone call bar, colours, fonts, search-engine details |
+| `public/assets/` | The taste skill's kit (do not edit these files) |
+| `next.config.ts` | Old addresses (`/services`, `/doctors`, `/contact`...) sent to the matching section |
 
-## Learn More
+Phone numbers, hours and the address appear in `page.tsx`, `layout.tsx` (menu, footer, phone bar
+and the Google structured data). Change every copy when one changes.
 
-To learn more about Next.js, take a look at the following resources:
+## Photos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The site has no photographs yet, because none of the hospital's own were available. Stock
+pictures of other hospitals would mislead patients, so none are used. Real photos of the
+building, both doctors, the operation theatre, the labour room and a patient room are the
+biggest improvement left; each section's layout changes to give them space.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploying
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to the GitHub repository connected to Vercel. Vercel builds and publishes it.
