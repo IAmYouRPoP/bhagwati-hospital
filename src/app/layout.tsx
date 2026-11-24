@@ -103,28 +103,40 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Hospital",
-  name: "Bhagwati Hospital",
-  legalName: "Bhagwati Hospitals Pvt. Ltd.",
-  url: SITE_URL,
-  telephone: "+919627408441",
-  email: "bhagwatihosp@yahoo.co.in",
-  foundingDate: "1994",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "325, Chaw Mandi",
-    addressLocality: "Roorkee",
-    addressRegion: "Uttarakhand",
-    postalCode: "247667",
-    addressCountry: "IN",
-  },
-  openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "10:00", closes: "14:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "18:00", closes: "20:00" },
-  ],
-  employee: [
-    { "@type": "Physician", name: "Dr. Sanjeev Agarwal", description: "Laparoscopic, laser and general surgeon" },
-    { "@type": "Physician", name: "Dr. Manisha Agarwal", description: "Gynaecologist and obstetrician" },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Bhagwati Hospital",
+      alternateName: ["Bhagwati Hospitals Pvt. Ltd.", "Bhagwati Hospital Roorkee"],
+    },
+    {
+      "@type": "Hospital",
+      "@id": `${SITE_URL}/#hospital`,
+      name: "Bhagwati Hospital",
+      legalName: "Bhagwati Hospitals Pvt. Ltd.",
+      url: SITE_URL,
+      telephone: "+919627408441",
+      email: "bhagwatihosp@yahoo.co.in",
+      foundingDate: "1994",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "325, Chaw Mandi",
+        addressLocality: "Roorkee",
+        addressRegion: "Uttarakhand",
+        postalCode: "247667",
+        addressCountry: "IN",
+      },
+      openingHoursSpecification: [
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "10:00", closes: "14:00" },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "18:00", closes: "20:00" },
+      ],
+      employee: [
+        { "@type": "Physician", name: "Dr. Sanjeev Agarwal", description: "Laparoscopic, laser and general surgeon" },
+        { "@type": "Physician", name: "Dr. Manisha Agarwal", description: "Gynaecologist and obstetrician" },
+      ],
+    },
   ],
 };
 
